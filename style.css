@@ -1,0 +1,37 @@
+body{
+margin:0;
+font-family:'Playfair Display', serif;
+background:#4b0f1b;
+color:#f5e6c8;
+text-align:center;
+}
+
+header{
+background:#3a0b14;
+padding:25px;
+border-bottom:3px solid gold;
+}
+
+nav a{
+color:gold;
+text-decoration:none;
+margin:0 20px;
+font-size:18px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:50px;
+}
+
+h1{
+font-family:'Cinzel', serif;
+color:gold;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#3a0b14;
+}
