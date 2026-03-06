@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Queen's Decree</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:#5b0f1b;
+font-family:'Cinzel', serif;
+color:#f8e6c1;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+max-width:750px;
+background:rgba(0,0,0,0.45);
+padding:50px;
+border-radius:15px;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+
+h1{
+color:#ffd700;
+font-size:42px;
+margin-bottom:25px;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+}
+
+button{
+margin-top:35px;
+padding:16px 34px;
+font-size:18px;
+background:#7a1d2a;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#a52a3a;
+}
+
+#decree{
+display:none;
+margin-top:30px;
+font-size:19px;
+color:#ffd700;
+}
+
+/* falling roses */
+
+.rose{
+position:absolute;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10px);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0e4a9e0c66.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+
+<h1>Royal Proclamation</h1>
+
+<p>
+Let it be known across the silent halls of this kingdom
+that the Queen has heard the words of the fallen knight.
+</p>
+
+<p>
+His sword was not raised in pride,
+but lowered in remorse.
+And though roses once fell upon the battlefield,
+their meaning was not lost upon Her Majesty.
+</p>
+
+<p>
+After thoughtful deliberation within the chambers of her heart,
+the Queen has reached her verdict.
+</p>
+
+<button onclick="openDecree()">Break the Royal Seal</button>
+
+<div id="decree">
+
+<p><strong>The Queen has spoken.</strong></p>
+
+<p>
+The knight's apology is accepted.
+His regret has been witnessed,
+his loyalty restored,
+and his place within the realm no longer stands in question.
+</p>
+
+<p>
+Yet before the knight rides toward the distant lands
+of Saudi Arabia,
+</p>
+
+<p>
+Her Majesty extends a final command.
+</p>
+
+<p>
+The Queen would see the knight in person,
+so that peace may not live merely in words,
+but in presence.
+</p>
+
+<p>
+Thus the decree stands:
+</p>
+
+<p>
+<strong>The knight is summoned to meet the Queen.</strong>
+</p>
+
+<p>
+So it is written.  
+So it shall be.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function openDecree(){
+document.getElementById("decree").style.display="block";
+}
+
+function createRose(){
+const rose=document.createElement("div");
+rose.classList.add("rose");
+rose.innerHTML="🌹";
+
+rose.style.left=Math.random()*100+"vw";
+rose.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+rose.remove();
+},10000);
+}
+
+setInterval(createRose,400);
+
+</script>
+
+</body>
+</html>
